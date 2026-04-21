@@ -11,7 +11,7 @@ public class Tank extends Creature{
 			action = name + " has missed their attack.";
 			return 0f;
 		}
-		float power = Rand.randomFloat(20,30);
+		float power = Rand.randomFloat(25,35);
 		action = name + " has attacked with " + power + " damage!";
 		return power;
 	}

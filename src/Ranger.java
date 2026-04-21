@@ -11,7 +11,7 @@ public class Ranger extends Creature{
 			action = name + " has missed their attack.";
 			return 0f;
 		}
-		float power = Rand.randomFloat(20,50);
+		float power = Rand.randomFloat(40,65);
 		action = name + " has attacked with " + power + " damage!";
 		return power;
 	}

@@ -11,7 +11,7 @@ public class Fighter extends Creature {
 			action = name + " has missed their attack.";
 			return 0f;
 		}
-		float power = Rand.randomFloat(10,25);
+		float power = Rand.randomFloat(15,30);
 		action = name + " has attacked with " + power + " damage!";
 		return power;
 	}

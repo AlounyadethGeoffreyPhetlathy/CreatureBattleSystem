@@ -60,12 +60,12 @@ public class BattleSystem {
     	case 1:
     		a = new Ranger();
     		a.name = "A";
-    		a.health = 100;
+    		a.health = 150;
     		break;
     	case 2:
     		a = new Tank();
     		a.name = "A";
-    		a.health = 250;
+    		a.health = 200;
     		break;
     	}
     	switch (Rand.randomInt(0,3)) {
@@ -77,12 +77,12 @@ public class BattleSystem {
     	case 1:
     		b = new Ranger();
     		b.name = "B";
-    		b.health = 100;
+    		b.health = 150;
     		break;
     	case 2:
     		b = new Tank();
     		b.name = "B";
-    		b.health = 250;
+    		b.health = 200;
     		break;
     	}
     	Creature[] c = {a,b};
