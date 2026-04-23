@@ -1,4 +1,8 @@
-public class Ranger extends Creature{
+public class Ranger extends Creature {
+	public Ranger(float health, String name, String action) {
+		super(health, name, action);
+	}
+	
 	@Override
 	public int pickAction() {
 		return Rand.randomInt(0,2);

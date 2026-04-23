@@ -1,7 +1,23 @@
 public abstract class Creature {
-    public float health;
-    public String name;
-    public String action;
+    private float health;
+    private String name;
+    private String action;
+    
+    // Constructor
+    public Creature(float health, String name, String action) {
+    	this.health = health;
+    	this.name = name;
+    	this.action = action;
+    }
+    
+    // Getters
+    public float getHealth() {
+    	return health;
+    }
+    
+    public String name() {
+    	return name;
+    }
 
 
     // Returns the damage done by the Creature

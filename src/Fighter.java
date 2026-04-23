@@ -1,4 +1,8 @@
 public class Fighter extends Creature {
+	public Fighter(float health, String name, String action) {
+		super(health, name, action);
+	}
+	
 	@Override
 	public int pickAction() {
 		return Rand.randomInt(0,2);

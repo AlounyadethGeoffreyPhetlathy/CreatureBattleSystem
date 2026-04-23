@@ -53,36 +53,24 @@ public class BattleSystem {
     	Creature b = null;
     	switch (Rand.randomInt(0,3)) {
     	case 0:
-    		a = new Fighter();
-    		a.name = "A";
-    		a.health = 120;
+    		a = new Fighter(120f,"A","");
     		break;
     	case 1:
-    		a = new Ranger();
-    		a.name = "A";
-    		a.health = 150;
+    		a = new Ranger(150f,"A","");
     		break;
     	case 2:
-    		a = new Tank();
-    		a.name = "A";
-    		a.health = 200;
+    		a = new Tank(200f,"A","");
     		break;
     	}
     	switch (Rand.randomInt(0,3)) {
     	case 0:
-    		b = new Fighter();
-    		b.name = "B";
-    		b.health = 120;
+    		b = new Fighter(120f,"B","");
     		break;
     	case 1:
-    		b = new Ranger();
-    		b.name = "B";
-    		b.health = 150;
+    		b = new Ranger(150f,"B","");
     		break;
     	case 2:
-    		b = new Tank();
-    		b.name = "B";
-    		b.health = 200;
+    		b = new Tank(200f,"B","");
     		break;
     	}
     	Creature[] c = {a,b};

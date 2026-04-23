@@ -1,4 +1,8 @@
-public class Tank extends Creature{
+public class Tank extends Creature {
+	public Tank(float health, String name, String action) {
+		super(health, name, action);
+	}
+	
 	@Override
 	public int pickAction() {
 		return Rand.randomInt(0,2);
