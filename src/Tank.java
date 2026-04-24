@@ -1,4 +1,5 @@
 public class Tank extends Creature {
+	// Constructor
 	public Tank(float health, String name, String action) {
 		super(health, name, action);
 	}
@@ -12,11 +13,11 @@ public class Tank extends Creature {
 	public float attack() {
 		// 30% chance of missing
 		if (Rand.randomInt(0,10) < 3) {
-			action = name + " has missed their attack.";
+			super.missAction();
 			return 0f;
 		}
 		float power = Rand.randomFloat(25,35);
-		action = name + " has attacked with " + power + " damage!";
+		super.attackAction();
 		return power;
 	}
 	
@@ -24,23 +25,12 @@ public class Tank extends Creature {
 	public float defend() {
 		// 80% chance of defending
 		if (Rand.randomInt(0,10) < 8) {
-			action = name + " defended and reduced damage by 70%!";
+			super.defendAction();
 			return 0.3f;
 		}
 		else {
-			action = name + " failed to defend.";
+			super.failDefendAction();
 		}
-//		health -= incomingPower;
 		return 1f;
-	}
-	
-	@Override
-	public void calculateNewHealth(float damageTaken) {
-		health -= damageTaken;
-	}
-	
-	@Override
-	public void calculateNewHealth(float damageTaken, float defenseMulti) {
-		health -= damageTaken * defenseMulti;
 	}
 }

@@ -6,6 +6,7 @@ public class Main {
         // set up the creatures
         Creature[] battlers = battleSystem.generateBattlers();
         System.out.println(battlers[0] + " " + battlers[1]);
+        System.out.println();
 
         // run the battle
         battleSystem.battle(battlers[0], battlers[1]);

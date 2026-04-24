@@ -1,4 +1,5 @@
 public class Ranger extends Creature {
+	// Constructor
 	public Ranger(float health, String name, String action) {
 		super(health, name, action);
 	}
@@ -12,11 +13,11 @@ public class Ranger extends Creature {
 	public float attack() {
 		// 50% chance of missing
 		if (Rand.randomInt(0,10) < 5) {
-			action = name + " has missed their attack.";
+			super.missAction();
 			return 0f;
 		}
 		float power = Rand.randomFloat(40,65);
-		action = name + " has attacked with " + power + " damage!";
+		super.attackAction();
 		return power;
 	}
 	
@@ -24,23 +25,12 @@ public class Ranger extends Creature {
 	public float defend() {
 		// 50% chance of defending
 		if (Rand.randomInt(0,10) < 5) {
-			action = name + " dodge roll the attack!";
+			super.defendAction();
 			return 0f;
 		}
 		else {
-			action = name + " failed to defend.";
+			super.failDefendAction();
 		}
-//		health -= incomingPower;
 		return 1f;
-	}
-	
-	@Override
-	public void calculateNewHealth(float damageTaken) {
-		health -= damageTaken;
-	}
-	
-	@Override
-	public void calculateNewHealth(float damageTaken, float defenseMulti) {
-		health -= damageTaken * defenseMulti;
 	}
 }

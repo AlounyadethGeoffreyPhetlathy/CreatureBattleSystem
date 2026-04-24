@@ -1,8 +1,12 @@
 import java.sql.SQLOutput;
 
 public class BattleSystem {
+	public BattleSystem() {
+		
+	}
+	
     public void battle(Creature a, Creature b) {
-        while (a.health > 0 && b.health > 0) {
+        while (a.getHealth() > 0 && b.getHealth() > 0) {
 //            float attackPower = a.attack();
 //            b.defend(attackPower);
         	
@@ -25,13 +29,13 @@ public class BattleSystem {
         		// A attacks, B defends
         		float damageA = a.attack();
         		float defenseB = b.defend();
-        		b.calculateNewHealth(damageA, defenseB);
+        		b.calculateNewHealth(damageA,defenseB);
         	}
         	else if (actionB == 1) {
         		// B attacks, A defends
         		float damageB = b.attack();
         		float defenseA = a.defend();
-        		a.calculateNewHealth(damageB, defenseA);
+        		a.calculateNewHealth(damageB,defenseA);
         	}
         	
             System.out.println(a.readAction());

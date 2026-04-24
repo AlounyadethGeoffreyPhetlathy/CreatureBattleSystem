@@ -15,7 +15,7 @@ public abstract class Creature {
     	return health;
     }
     
-    public String name() {
+    public String getName() {
     	return name;
     }
 
@@ -61,9 +61,29 @@ public abstract class Creature {
     
     public abstract float defend();
     
-    public abstract void calculateNewHealth(float damageTaken);
+    public void calculateNewHealth(float damageTaken) {
+		health -= damageTaken;
+	}
     
-    public abstract void calculateNewHealth(float damageTaken, float defenseMulti);
+    public void calculateNewHealth(float damageTaken, float defenseMulti) {
+    	health -= damageTaken * defenseMulti;
+	}
+    
+    public void attackAction() {
+    	action = getName() + " has made an attack.";
+    }
+    
+    public void missAction() {
+    	action = getName() + " has missed their attack.";
+    }
+    
+    public void defendAction() {
+    	action = getName() + " has defended.";
+    }
+    
+    public void failDefendAction() {
+    	action = getName() + " has failed to defend.";
+    }
 
     public String readAction() {
         return action;
